@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+        
+    <bean id="printimp1" class="com.sxh.spring.testAop.PrintImpl1"/>
+    <bean id="printimp2" class="com.sxh.spring.testAop.PrintImpl2"/>
+    <bean id="cuttime" class="com.sxh.spring.testAop.CutPointTime"/>   
+    <bean id="cutlog" class="com.sxh.spring.testAop.CutPointLog"/> 
+         
+    <aop:config>
+        <aop:aspect id="time" ref="cuttime" order="1">
+            <aop:pointcut id="addTime" expression="execution(* com.sxh.spring.testAop.PrintInterface.do*(..))"/>
+        	<aop:before method="beforeMethod" pointcut-ref="addTime"/>
+        	<aop:after method="afterMethod" pointcut-ref="addTime"/>
+        </aop:aspect>
+        <aop:aspect id="log" ref="cutlog" order="2">
+            <aop:pointcut id="addLog" expression="execution(* com.sxh.spring.testAop.PrintInterface.print*(..))"/>
+        	<aop:before method="beforeMethod" pointcut-ref="addLog"/>
+        	<aop:after method="afterMethod" pointcut-ref="addLog"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
