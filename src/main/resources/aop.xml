@@ -12,7 +12,7 @@
     <bean id="printimp2" class="com.sxh.spring.testAop.PrintImpl2"/>
     <bean id="cuttime" class="com.sxh.spring.testAop.CutPointTime"/>   
     <bean id="cutlog" class="com.sxh.spring.testAop.CutPointLog"/> 
-         
+    
     <aop:config>
         <aop:aspect id="time" ref="cuttime" order="1">
             <aop:pointcut id="addTime" expression="execution(* com.sxh.spring.testAop.PrintInterface.do*(..))"/>
