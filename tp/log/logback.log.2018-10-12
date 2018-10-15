@@ -1,0 +1,6 @@
+2018-10-12 09:27:47.010 [main] INFO  test:  =====begin======
+2018-10-12 09:27:47.023 [main] INFO  test:  person1 == person2:true
+2018-10-12 09:27:47.023 [main] INFO  test:  person1:Person [personName=Alice, personAge=10]
+2018-10-12 09:27:47.030 [main] INFO  test:  family:Family [familyName=father, person=Person [personName=Alice, personAge=10]]
+2018-10-12 09:27:47.031 [main] INFO  test:  singletonClass:com.sxh.spring.testBean.SingletonClass@4dc8caa7
+2018-10-12 09:27:47.031 [main] INFO  test:  =====end======

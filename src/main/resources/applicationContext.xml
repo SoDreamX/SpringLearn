@@ -13,4 +13,44 @@
 	  <context:exclude-filter type="annotation" 
 	      expression="org.springframework.stereotype.Controller"/>  
 	</context:component-scan>
+	
+	<!--=================== 数据源，事务控制，xxx ================-->
+	<context:property-placeholder location="classpath:dbconfig.properties" />
+	 
+	<bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	 
+	<!-- jndi数据源配置 -->
+	<!--
+    <bean id="pooledDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">         
+    	<property name="jndiName" value="${jdbc.jndiName}"/>         
+	</bean>
+	-->
+	<!-- ================== 配置和MyBatis的整合=============== -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 指定mybatis全局配置文件的位置 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="dataSource" ref="pooledDataSource"></property>
+		<!-- 指定mybatis，mapper文件的位置 -->
+		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+	</bean>
+	<!-- 配置扫描器，将mybatis接口的实现加入到ioc容器中 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!--扫描所有dao接口的实现，加入到ioc容器中 -->
+		<property name="basePackage" value="com.sxh.spring.mybatis.dao"></property>
+	</bean>
+	<!-- 配置一个可以执行批量的sqlSession -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+		<constructor-arg name="executorType" value="BATCH"></constructor-arg>
+	</bean>
+	<!-- =============================================  -->
+	<!-- 事务管理器 -->  
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="pooledDataSource" />  
+    </bean>
 </beans>
