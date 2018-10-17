@@ -127,6 +127,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.41</version>
 		</dependency>
+		<!-- Netty -->
+		<dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>5.0.0.Alpha1</version>
+        </dependency>
 	</dependencies>
 	<build>
     <sourceDirectory>src</sourceDirectory>

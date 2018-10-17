@@ -1,0 +1,2 @@
+2018-10-15 16:02:33.748 [main] INFO  SqlCostConsole:  SQL：[select * from tbl_student where studentId = 1]执行耗时[13ms]
+2018-10-15 16:02:33.816 [main] INFO  SqlCostConsole:  SQL：[select * from tbl_student where studentId = 1 and studentName = "Jack";]执行耗时[1ms]

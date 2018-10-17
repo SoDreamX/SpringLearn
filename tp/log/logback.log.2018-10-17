@@ -1,0 +1,2 @@
+2018-10-17 13:53:50.809 [nioEventLoopGroup-3-1] INFO  com.sxh.spring.netty.TimeServerHandler:  服务端取到的信息为:QUERY TIME ORDER
+2018-10-17 13:53:50.844 [nioEventLoopGroup-2-1] INFO  com.sxh.spring.netty.TimeClientHandler:  Now is:Wed Oct 17 13:53:50 CST 2018
