@@ -10,6 +10,11 @@ public class PrintImpl2 implements PrintInterface {
 	@Override
 	public void doPrint() {
 		System.out.println("PrintImpl2===============doPrint()");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

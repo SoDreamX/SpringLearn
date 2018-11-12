@@ -18,7 +18,7 @@
         	select * from tbl_student where studentId = #{studentid}
         ]]>
         <if test="studentname != null">
-        	and studentName = #{studentname};
+        	and studentName = #{studentname}
 	    </if>
     </select>
     <select id="selectStudentsById" parameterType="int" resultMap="studentMap">

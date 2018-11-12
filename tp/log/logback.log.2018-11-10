@@ -1,0 +1,17 @@
+2018-11-10 14:37:30.037 [main] INFO  test:  =====begin======
+2018-11-10 14:37:30.041 [main] INFO  test:  person1 == person2:true
+2018-11-10 14:37:30.041 [main] INFO  test:  person1:Person [personName=Alice, personAge=10]
+2018-11-10 14:37:30.041 [main] INFO  test:  family:Family [familyName=father, person=Person [personName=Alice, personAge=10]]
+2018-11-10 14:37:30.041 [main] INFO  test:  singletonClass:com.sxh.spring.testBean.SingletonClass@f5958c9
+2018-11-10 14:37:30.041 [main] INFO  test:  =====end======
+2018-11-10 14:44:09.340 [main] INFO  testAop:  进入testAop测试方法。
+2018-11-10 14:44:09.349 [main] INFO  testAop:  ================分割线============
+2018-11-10 14:45:43.543 [main] INFO  testAop:  进入testAop测试方法。
+2018-11-10 14:45:44.555 [main] INFO  testAop:  ================分割线============
+2018-11-10 14:52:01.373 [main] INFO  testAnnotation:  ==============begin=============
+2018-11-10 14:52:01.378 [main] INFO  testAnnotation:  动物园有：TigerName:老虎和MonkeyName:猴子
+2018-11-10 14:52:01.378 [main] INFO  testAnnotation:  ==============end=============
+2018-11-10 15:09:49.043 [main] INFO  SqlCostConsole:  SQL：[select * from tbl_student where studentId = 1]执行耗时[48ms]
+2018-11-10 15:09:49.097 [main] INFO  SqlCostConsole:  SQL：[select * from tbl_student where studentId = 1 and studentName = "Jack";]执行耗时[2ms]
+2018-11-10 15:10:36.078 [main] INFO  SqlCostConsole:  SQL：[select * from tbl_student where studentId = 1]执行耗时[20ms]
+2018-11-10 15:10:36.111 [main] INFO  SqlCostConsole:  SQL：[select * from tbl_student where studentId = 1 and studentName = "Jack"]执行耗时[1ms]
